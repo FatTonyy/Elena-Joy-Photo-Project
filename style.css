@@ -83,6 +83,7 @@ html {
 
 body {
 	font-family: "Ruh1", sans-serif;
+	animation: opening 1s ease-in-out;
 }
 h1 {
 	font-family: "Vibes", sans-serif;
@@ -154,7 +155,40 @@ nav {
 	bottom: 0;
 	left: -20%;
 	z-index: -1;
+	transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+	animation: plant 1.5s ease-in-out 0.5s forwards,
+		plant-shade 2.5s infinite ease alternate-reverse 2s;
+	transform-origin: bottom;
 }
 .plant2 {
 	left: 40%;
+}
+
+/* animating the plants */
+@keyframes opening {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes plant {
+	from {
+		transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+	}
+	to {
+		transform: translateY(0%) rotateZ(0deg) rotateX(0deg);
+	}
+}
+
+@keyframes plant-shade {
+	from {
+		transform: rotateZ(-5deg);
+	}
+
+	to {
+		transform: rotateZ(0deg);
+	}
 }
