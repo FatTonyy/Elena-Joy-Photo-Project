@@ -21,6 +21,7 @@
 }
 html {
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 :root {
@@ -127,6 +128,7 @@ nav {
 }
 .hero-introduction p {
 	padding: 5rem 10rem;
+	color: var(--grey-text);
 }
 .hero-introduction h2 {
 	padding-top: 3rem;
@@ -198,6 +200,51 @@ nav {
 .menu-check {
 	display: none;
 }
+/* about-section */
+.about {
+	min-height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+}
+.about-text {
+	color: #fff;
+	background: var(--background-color);
+	flex: 2 1 40rem;
+	justify-content: space-around;
+}
+
+.about-text div {
+	padding: 3rem 10rem;
+}
+
+.about-text h3 {
+	padding: 2rem 0;
+	font-family: "Ruh1 medium";
+}
+.about-text h2 {
+	font-family: "Vibes";
+	padding: 4rem;
+}
+.about-text p {
+	font-size: var(--text);
+}
+.about-image {
+	flex: 1 1 40rem;
+	position: relative;
+}
+
+.about-image h5 {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -20%);
+	letter-spacing: 2rem;
+}
+.about-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
 /* media-query */
 @media screen and (max-width: 842px) {
 	.hero {
@@ -262,5 +309,10 @@ nav {
 	}
 	.menu-check:checked ~ .burger span:nth-child(3) {
 		transform: rotateZ(-45deg) translateY(-300%);
+	}
+
+	/* about section */
+	.about-text div {
+		padding: 3rem 3rem;
 	}
 }
